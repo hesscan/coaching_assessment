@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Readiness Assessment</title>
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --background-color: #f8fafc;
+            --text-color: #333;
+            --border-color: #e2e8f0;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+            color: var(--text-color);
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 1rem 4rem 1rem;
+        }
+
+        .assessment-form {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .section {
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .section h2 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .question {
+            margin-bottom: 1.5rem;
+        }
+
+        .question label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            min-height: 100px;
+            margin-top: 0.5rem;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+        }
+
+        .radio-group {
+            margin-top: 0.5rem;
+        }
+
+        .radio-option {
+            margin-bottom: 0.5rem;
+        }
+
+        button {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin-top: 1rem;
+        }
+
+        button:hover {
+            background-color: var(--secondary-color);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>AI Readiness Assessment</h1>
+        <p>Evaluate your organization's potential for AI integration</p>
+    </header>
+
+    <main>
+        <form class="assessment-form">
+            <div class="section">
+                <h2>Understanding Current Workflows</h2>
+                
+                <div class="question">
+                    <label for="repetitive-tasks">1. What repetitive tasks consume a significant portion of your time?</label>
+                    <textarea id="repetitive-tasks" name="repetitive-tasks" placeholder="Describe your repetitive tasks..."></textarea>
+                </div>
+
+                <div class="question">
+                    <label for="error-prone">2. What processes in your work are prone to human error?</label>
+                    <textarea id="error-prone" name="error-prone" placeholder="List error-prone processes..."></textarea>
+                </div>
+
+                <div class="question">
+                    <label for="inefficiencies">3. Are there areas in your workflow where inefficiencies occur regularly?</label>
+                    <textarea id="inefficiencies" name="inefficiencies" placeholder="Describe workflow inefficiencies..."></textarea>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Identifying Pain Points</h2>
+                
+                <div class="question">
+                    <label>4. Do you struggle to create written content?</label>
+                    <div class="radio-group">
+                        <div class="radio-option">
+                            <input type="radio" id="content-yes" name="content-struggle" value="yes">
+                            <label for="content-yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="content-no" name="content-struggle" value="no">
+                            <label for="content-no">No</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <label for="delayed-decisions">5. What types of business decisions are delayed due to lack of actionable insights?</label>
+                    <textarea id="delayed-decisions" name="delayed-decisions" placeholder="Describe delayed decisions..."></textarea>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Evaluating Knowledge of LLMs</h2>
+                
+                <div class="question">
+                    <label>6. Have you used AI tools like ChatGPT before?</label>
+                    <div class="radio-group">
+                        <div class="radio-option">
+                            <input type="radio" id="ai-yes" name="ai-experience" value="yes">
+                            <label for="ai-yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="ai-no" name="ai-experience" value="no">
+                            <label for="ai-no">No</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <label for="prompt-engineering">7. How familiar are you with prompt engineering?</label>
+                    <div class="radio-group">
+                        <div class="radio-option">
+                            <input type="radio" id="prompt-none" name="prompt-familiarity" value="none">
+                            <label for="prompt-none">Not at all familiar</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="prompt-basic" name="prompt-familiarity" value="basic">
+                            <label for="prompt-basic">Somewhat familiar</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="prompt-advanced" name="prompt-familiarity" value="advanced">
+                            <label for="prompt-advanced">Very familiar</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Assessing Collaboration and Innovation</h2>
+                
+                <div class="question">
+                    <label>8. Do you collaborate with others to solve problems?</label>
+                    <div class="radio-group">
+                        <div class="radio-option">
+                            <input type="radio" id="collab-yes" name="collaboration" value="yes">
+                            <label for="collab-yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="collab-no" name="collaboration" value="no">
+                            <label for="collab-no">No</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <label>9. Do you frequently experiment with new technologies?</label>
+                    <div class="radio-group">
+                        <div class="radio-option">
+                            <input type="radio" id="tech-yes" name="tech-experimentation" value="yes">
+                            <label for="tech-yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="tech-no" name="tech-experimentation" value="no">
+                            <label for="tech-no">No</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Probing for Customization Opportunities</h2>
+                
+                <div class="question">
+                    <label>10. Do you handle sensitive or proprietary information?</label>
+                    <div class="radio-group">
+                        <div class="radio-option">
+                            <input type="radio" id="sensitive-yes" name="sensitive-info" value="yes">
+                            <label for="sensitive-yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="sensitive-no" name="sensitive-info" value="no">
+                            <label for="sensitive-no">No</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <label for="tool-gaps">11. What aspects of your role do general-purpose tools fail to address?</label>
+                    <textarea id="tool-gaps" name="tool-gaps" placeholder="Describe tool limitations..."></textarea>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Future Vision</h2>
+                
+                <div class="question">
+                    <label for="barriers">12. What barriers or concerns do you foresee in adopting AI solutions?</label>
+                    <textarea id="barriers" name="barriers" placeholder="Describe potential barriers..."></textarea>
+                </div>
+            </div>
+
+            <button type="submit">Submit Assessment</button>
+        </form>
+    </main>
+</body>
+</html>
